@@ -1,14 +1,15 @@
+//! # Warp10Exporter
+//!
+//! `Warp10Exporter` that sends power consumption data of the host and its processes to
+//! a [Warp10](https://warp10.io) instance through **HTTP(s)**
+//! (contributions welcome to support websockets).
 use crate::exporters::*;
 use crate::sensors::{RecordGenerator, Sensor, Topology};
 use clap::Arg;
 use std::time::Duration;
 use std::{env, thread};
 use utils::get_scaphandre_version;
-//use warp10::data::Format;
 
-/// An exporter that sends power consumption data of the host and its processes to
-/// a [Warp10](https://warp10.io) instance through **HTTP(s)**
-/// (contributions welcome to support websockets).
 pub struct Warp10Exporter {
     topology: Topology,
 }
